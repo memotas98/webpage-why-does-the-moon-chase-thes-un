@@ -1,0 +1,75 @@
+/* Estilos Generales */
+body {
+    font-family:'Times New Roman', Times, serif;
+    color: #333;
+    background-color: #d3d3d3;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Estilos para la cabecera */
+  .navbar {
+    background-color: #343a40;
+  }
+  
+  .navbar-brand {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 0.5em;
+  }
+  
+  /* Estilos para el título y la descripción */
+  .text-center {
+    text-align: center;
+  }
+  
+  .display-4 {
+    color: #0400ff;
+    font-size: 2.5em;
+    margin-top: 1em;
+  }
+  
+  .lead, h1 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    background-color: white;
+  }
+  
+  /* Estilos para la imagen */
+  img.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Estilos para botones PayPal y Descarga */
+  #paypal-button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #download-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  #download-button:hover {
+    background-color: #218838;
+  }
+  
+  /* Mensaje de resultado */
+  #result-message {
+    color: #dc3545;
+  }
+  

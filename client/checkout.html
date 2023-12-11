@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-book</title>
+  <script>
+    paypal.Buttons({
+      style: {
+        layout: 'vertical',
+        color:  'blue',
+        shape:  'rect',
+        label:  'paypal'
+      }
+    }).render('#paypal-button-container');
+  </script>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="design.css">
+
+</head>
+<body >
+
+  <header class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1"></span>
+    </div>
+  </header>
+
+  <div class="container mt-5">
+    <div class="text-center mb-4">
+      <h1 class="display-4">Why Does the Moon Chase the Sun?</h1>
+      <div class="text-center mb-4">
+        <img src="cover.jpg" alt="Portada del libro" class="img-fluid" width="600px">
+      </div>
+      <p class="lead">Every week the New York Times comes out with a list of bestselling books and authors and every week the list could be considered an outright lie. Why? Because authors, bookstores, publishers, and agents take advantage of the process. The results are not reflective of the truth. To be clear, these preorders and bulk orders do not represent true organic sales in the marketplace. 
+        Very often those who end up on the New York Times Best Seller list do so with staged sales. This is not an honest process. Thus, people with no writing experience become best sellers. And famous people who want more notoriety and those who are unknowns game the system and claim the prized title of a New York Times champion. But is it true? No. 
+        Many studies and revelations have been printed about the New York Times Best Seller List and the gig is up. It is a scam, a hollow and shallow marketing scheme of the first order. 
+        Meanwhile, authors who write quality works remain obscure and sell little to none of their books. It is time to change this dynamic. It is time for independent authors to earn and receive the recognition they deserve. 
+        It is time to say, “Yes, to hell with the New York Times Best Seller List.”
+        Consider, Why Does the Moon Chase the Sun? This book is a recently self-published work that is worthy of our recognition. Not only is this book inspirational, but it also has a moral that should be taught and learned by everyone. 
+        Regrettably, the author, James Johnson, is not widely recognized at all, but he should be. His writings and books are worthy of our patronage. 
+        For a limited time, we can buy the audio book at half price and receive the audiobook for free. 
+        Should we decide to order the paperback or hardcover, those options are available as well. 
+        Let’s make a concerted effort to support this author. Let’s voice a collective rallying cry that rejects the New York Times Best Seller list as a cheap advertising scheme. Let’s celebrate new and independent authors. Let’s make our organic purchases of worthy books the barometer of truly deserving sales and recognition.
+        Send this link to family and friends. Send the link to colleagues. Send the link to everyone who has an independent mind and heart.
+        </p>
+    </div>
+    
+
+
+    <div class="text-center mb-4">
+      <p class="lead">Purchase now with PayPal</p>
+      <!-- Agregar un contenedor para el botón de PayPal con algunos estilos -->
+      <div id="paypal-button-container" style="max-width: 200px; margin: auto;"></div>
+      <p id="result-message" class="mt-2"></p>
+    </div>
+
+     <!-- Nuevo botón de descarga oculto -->
+     <button id="download-button" style="display:none;">Download the files</button>
+    </div>
+  </div>
+
+  <script>
+    // Nuevo script para manejar la descarga del archivo después de una transacción exitosa
+    document.getElementById('paypal-button-container').addEventListener('click', function() {
+      // Simula una transacción exitosa de PayPal
+      const mockTransactionData = {
+        orderID: 'mock-order-id', // Puedes usar el ID de la orden que obtienes de PayPal
+      };
+
+      handleSuccessfulPayment(mockTransactionData);
+    });
+
+    function handleSuccessfulPayment(data) {
+      // Lógica para manejar una transacción exitosa
+      // ... Aquí deberías realizar las acciones necesarias, como almacenar la orden en tu base de datos, etc.
+
+      // Muestra el botón de descarga
+      document.getElementById('download-button').style.display = 'block';
+
+      // Agrega un evento de clic al botón de descarga
+      document.getElementById('download-button').addEventListener('click', function() {
+        // Lógica para la descarga del archivo
+        // En este ejemplo, simplemente simulo una descarga
+        const downloadLink = document.createElement('a');
+        downloadLink.href = 'ruta-del-archivo/ebook.pdf'; // Reemplaza con la ruta real de tu archivo
+        downloadLink.download = 'nombre-del-archivo.pdf'; // Reemplaza con el nombre deseado del archivo
+        downloadLink.click();
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AZ6Is2sa8DloJF5InO0dl7HIF8XBniw36wrG6oqnOzqzSTaJanfPnHZmLltczJEDFXDkPQ-HZGfFQxJy&components=buttons&enable-funding=paylater&disable-funding=venmo,card" data-sdk-integration-source="integrationbuilder_sc"></script>
+  <script src="app.js"></script>
+</body>
+</html>
